@@ -4,7 +4,13 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    unique: true, // Ensures the username is unique
+    // unique: true, // Ensures the username is unique
+    trim: true
+  },
+  email: {
+    type: String,
+    required: true,
+    // unique: true, // Ensures the username is unique
     trim: true
   },
   password: {
