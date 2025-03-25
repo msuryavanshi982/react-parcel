@@ -1,9 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const route = require("./routes/router");
+const router = require("./routes/router");
 const app = express();
 const PORT =  8000;
-const URL = "mongodb+srv://pst:pst123%40@cluster0.lgg8c.mongodb.net/mongo-aggregation"
+const URL = "mongodb+srv://pst:pst123%40@cluster0.lgg8c.mongodb.net/userData"
 
 app.use(express.json());
 
@@ -15,7 +15,7 @@ mongoose.connect(URL, {useNewUrlParser:true} )
   console.log(err)
 });
 
-app.use("/", route)
+app.use("/", router)
 
 app.listen(PORT, ()=>{
   console.log("App is running on port 8000")
