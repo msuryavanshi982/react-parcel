@@ -12,5 +12,18 @@ const createUser = async (req, res) => {
   }
 };
 
+const getUsers = async (req, res) => {
+  try {
 
-module.exports = createUser;
+    const Users = await userModel.find();
+
+    res.status(200).send({ status: true, data: Users, message: 'all users' });
+  } catch (err) {
+    return res.status(500).send({ status: false, message: err.message });
+  }
+};
+
+
+
+
+module.exports = {createUser, getUsers};
